@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.samao.order.domain">
+    <class name="Customer" table="CUSTOMER">
+        <id name="id" column="CUSTOMER_ID">
+            <generator class="identity"/>
+        </id>
+
+        <property name="userName" column="USER_NAME" type="java.lang.String"/>
+        <property name="userEmail" column="USER_EMAIL" type="java.lang.String"/>
+        <property name="active" column="ACTIVE" type="yes_no"/>
+    </class>
+</hibernate-mapping>

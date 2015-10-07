@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.samao.order.domain">
+
+    <class name="Item" table="TTEM">
+        <id name="itemNumber" column="ITEM_NUMBER">
+        <generator class="identity"/>
+        </id>
+
+        <property name="itemName" column="ITEM_NAME"/>
+        <property name="createDate" column="CREATE_DATE" type="java.util.Date"/>
+        <property name="price" column="PRICE"/>
+
+    </class>
+
+</hibernate-mapping>

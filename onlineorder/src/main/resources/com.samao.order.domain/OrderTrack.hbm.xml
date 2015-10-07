@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.samao.order.domain">
+    <class name="OrderTrack" table="ORDER_TRACK">
+        <id name="id" column="ORDER_TRACK_ID">
+            <generator class="identity"/>
+        </id>
+        <many-to-one name="order" column="ORDER" class="Order"/>
+        <property name="orderStatus" column="ORDER_STATUS">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">com.samao.order.domain.OrderStatus</param>
+                <param name="usedName">ture</param>
+            </type>
+        </property>
+
+        <property name="trackingDate" column="TRACKING_DATE" type="java.util.Date"/>
+        <property name="current" column="CURRENT" type="yes_no"/>
+    </class>
+</hibernate-mapping>
